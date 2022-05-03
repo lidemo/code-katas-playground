@@ -10,11 +10,15 @@ require __DIR__ . '/../vendor/autoload.php';
 class KataTest extends TestCase
 {
 
-
-    public function testDummy()
+    public function testTwoRolls()
     {
         $kata = new Kata();
-        $this->assertTrue(false);
+ 
+        for ($i=1; $i <= 10; $i++) {
+            $kata->roll(10);
+        }
+
+        $this->assertEquals('100', $kata->score());
     }
 
     public function testNotFailing()
